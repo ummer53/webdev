@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
-const cors = require('cors');
-app.use(cors())
+const cors = require("cors");
+const logger = require("morgan");
+app.use(cors());
 app.use(express.json());
+app.use(logger("combined"));
 
 let notes = [
   {
@@ -41,7 +43,7 @@ app.post("/api/notes", (request, response) => {
     important: body.important || false,
     id: generateId(),
   };
-console.log(note)
+  console.log(note);
   notes = notes.concat(note);
 
   response.json(note);
