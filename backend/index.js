@@ -5,6 +5,7 @@ const logger = require("morgan");
 app.use(cors());
 app.use(express.json());
 app.use(logger("combined"));
+app.use(express.static('build'))
 
 let notes = [
   {
