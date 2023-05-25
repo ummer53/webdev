@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 // DO NOT SAVE YOUR PASSWORD TO GITHUB!!
-const url = process.env.MONGODB_URL;
+const url = process.env.MONGODB_URI;
 
 mongoose.set("strictQuery", false);
 mongoose
